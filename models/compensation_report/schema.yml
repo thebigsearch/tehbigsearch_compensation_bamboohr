@@ -1,9 +1,10 @@
- 
-version: 2
+ version: 2
 
-models:
-  - name: bamboo_hr_data
-    description: "Comepnsation table BambooHR"
-    columns: 
-      - name: first_name
-        description: "First name of employee"
+
+sources:
+  - name: bamboohr
+    description: bamboohr employees data
+    database: dev
+    schema: bamboohr
+    tables: 
+      - name: employee
