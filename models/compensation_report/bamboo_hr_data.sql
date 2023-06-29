@@ -1,7 +1,6 @@
 SELECT 
-    first_name,
-    last_name,
     id,
+    first_name || ' ' || last_name AS full_name,
     job_title,
     employment_status_date,
     termination_date,
@@ -28,3 +27,5 @@ SELECT
     note
 
 FROM {{ source('bamboohr', 'employee') }}
+WHERE full_name NOT ILIKE '%test%'
+ORDER BY id
